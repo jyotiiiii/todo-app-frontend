@@ -1,3 +1,19 @@
+# Kinda
+
+_A To-Do App_
+
+### Bootstrap Structure
+
+![Image of Bootstrap Structure Sketch](https://.png)
+
+### Bootstrap Grid
+
+![Image of Bootstrap Grid Sketch](https://.png)
+
+### React Components
+
+![Image of React Components Sketch](https://.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
