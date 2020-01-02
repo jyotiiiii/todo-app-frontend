@@ -4,15 +4,15 @@ _A To-Do App_
 
 ### Bootstrap Structure
 
-![Image of Bootstrap Structure Sketch](https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/bootstrapStructure.png)
+<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/bootstrapStructure.png" alt="Image of Bootstrap Structure Sketch" width="400"/>
 
 ### Bootstrap Grid
 
-![Image of Bootstrap Grid Sketch](https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/bootstrapGrid.png)
+<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/bootstrapGrid.png" alt="Image of Bootstrap Grid Sketch" width="400"/>
 
 ### React Components
 
-![Image of React Components Sketch](https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/reactComponents.png)
+<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/reactComponents.png" alt="Image of React Components Sketch" width="400"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
