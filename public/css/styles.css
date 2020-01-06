@@ -10,6 +10,20 @@ body {
   background-repeat: no-repeat;
   font-family: Montserrat;
 }
+
+a:hover {
+  color: #ff4c68;
+}
+
+h6 {
+  /* Score */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
 /* Navbar Section */
 
 .toggle {
@@ -54,10 +68,6 @@ body {
   padding: 0 2.5%;
 }
 
-.action-button:hover {
-  color: #ff4c68;
-}
-
 .fa-heart {
   font-weight: bold;
 }
@@ -73,19 +83,8 @@ body {
   width: 40px;
   background-color: black;
   border-radius: 50%;
-  /* display: inline-block; */
-  /* position: absolute; */
-  /* left: 70px; */
 }
 
-h6 {
-  /* Score */
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding-top: 5px;
-}
 #footer {
   padding: 2% 12% 2% 12%;
   line-height: 2;
@@ -114,7 +113,6 @@ h6 {
     width: 100%;
     height: 100px; /* Set the fixed height of the footer here */
     line-height: 100px; /* Vertically center the text there */
-    /* background-color: #f5f5f5; */
   }
   .custom-task {
     margin: 0 15% 0 20%;

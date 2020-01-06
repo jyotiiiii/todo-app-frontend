@@ -23,14 +23,16 @@ kinda-app
         └── App.js
             ├── Navbar.js
             │   ├── Score.js
-            │   ├── Hamburger.js
-            │   └── MenuItem.js
+            │   └── Hamburger.js
+            │       ├── MenuButton.js
+            │       ├── MenuItem.js
+            │       └── MenuSearch.js
             ├── Header.js
             │   ├── Brand.js
             │   ├── Logo.js
-            │   └── AddTask.js
-            │       ├── AddCustom.js
-            │       └── AddRandom.js
+            │   ├── AddTask.js
+            │   └── AddRandom.js
+            │
             ├── TaskForm.js
             ├── TaskList.js
             │   └── TaskItem.js
@@ -39,6 +41,22 @@ kinda-app
             └── Footer.js
                 ├── SocialIcon.js
                 └── Copyright.js
+```
+
+Component Template
+
+```
+import React from 'react';
+
+class xxx extends React.Component {
+  render() {
+    return (
+
+    );
+  }
+}
+
+export default xxx;
 ```
 
 ### Bootstrap Structure
