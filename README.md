@@ -2,6 +2,45 @@
 
 _A To-Do App_
 
+### React Component Tree
+
+```
+kinda-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   ├── css
+│   │   └── styles.css
+│   └── images
+└── src
+    ├── index.js
+    └── components
+        └── App.js
+            ├── Navbar.js
+            │   ├── Score.js
+            │   ├── Hamburger.js
+            │   └── MenuItem.js
+            ├── Header.js
+            │   ├── Brand.js
+            │   ├── Logo.js
+            │   └── AddTask.js
+            │       ├── AddCustom.js
+            │       └── AddRandom.js
+            ├── TaskForm.js
+            ├── TaskList.js
+            │   └── TaskItem.js
+            │       ├── DeleteButton.js
+            │       └── DoneButton.js
+            └── Footer.js
+                ├── SocialIcon.js
+                └── Copyright.js
+```
+
 ### Bootstrap Structure
 
 <img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/bootstrapStructure.png" alt="Image of Bootstrap Structure Sketch" width="400"/>
@@ -82,3 +121,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+```
+
+```
