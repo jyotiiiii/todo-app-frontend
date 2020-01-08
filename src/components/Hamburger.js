@@ -8,9 +8,9 @@ class Hamburger extends React.Component {
       <div className="collapse navbar-collapse" id="navbarNav">
         {/* ml-auto (margin left auto className floats the items to the right)  */}
         <ul className="navbar-nav ml-auto">
-          <Menuitem />
-          <Menuitem />
-          <Menuitem />
+          <Menuitem menuDescription="About" />
+          <Menuitem menuDescription="Kindness" />
+          <Menuitem menuDescription="How it works" />
           <Menusearch />
         </ul>
       </div>
