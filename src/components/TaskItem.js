@@ -9,8 +9,7 @@ class Taskitem extends React.Component {
         <div className="col-sm-12">
           <div className="row">
             <div className="col-8 col-sm-9 text-left">
-              This is a task. Lorem ipsum dolor sit amet, consectetur
-              adipiscing.
+              {this.props.taskDescription}
             </div>
             <div className="col-4 col-sm-3 pt-1">
               <Deletebutton />

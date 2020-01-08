@@ -4,10 +4,10 @@ class Tasklist extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <Taskitem />
-        <Taskitem />
-        <Taskitem />
-        <Taskitem />
+        <Taskitem taskDescription="Paint a self-portrait" />
+        <Taskitem taskDescription="Go for a leisurely walk" />
+        <Taskitem taskDescription="Pick some flowers" />
+        <Taskitem taskDescription="Go swimming in the sea" />
       </div>
     );
   }
