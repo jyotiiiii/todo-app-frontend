@@ -23,8 +23,8 @@ kinda-app
         └── App.js
             ├── Navbar.js
             │   ├── Score.js
+            │   ├── MenuButton.js
             │   └── Hamburger.js
-            │       ├── MenuButton.js
             │       ├── MenuItem.js
             │       └── MenuSearch.js
             ├── Header.js
