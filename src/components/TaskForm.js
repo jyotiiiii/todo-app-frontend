@@ -3,7 +3,7 @@ import React from 'react';
 class Taskform extends React.Component {
   render() {
     return (
-      <div className="container hidden-form">
+      <div className="container ">
         <div className="row">
           <div className="col-md-4 "></div>
           <div className="col-md-5 ">

@@ -4,7 +4,7 @@ import Header from './Header';
 import Taskform from './TaskForm';
 import Tasklist from './TaskList';
 import Footer from './Footer';
-
+import tasks from '../tasks';
 class App extends React.Component {
   render() {
     return (

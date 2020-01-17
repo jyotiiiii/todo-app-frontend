@@ -14,16 +14,3 @@ class Menuitem extends React.Component {
 }
 
 export default Menuitem;
-
-{
-  /* <li className="nav-item  ml-auto">
-              <a className="nav-link" href="#">
-                Kindness
-              </a>
-            </li>
-            <li className="nav-item ml-auto">
-              <a className="nav-link " href="#">
-                How it works
-              </a>
-            </li>  */
-}
