@@ -2,8 +2,10 @@ import React from 'react';
 
 class Deletebutton extends React.Component {
   deleteClicked = () => {
-    alert(`Are you sure you want to delete task? ${this.props.idNo}`);
+    this.props.deleteTaskFunction(this.props.idNo);
   };
+
+  // alert(`Are you sure you want to delete task? ${this.props.idNo}`);
 
   render() {
     return (

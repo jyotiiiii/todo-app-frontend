@@ -5,7 +5,10 @@ class Tasklist extends React.Component {
     return (
       <div className="container-fluid">
         {this.props.listOfTasks.map(item => (
-          <Taskitem toDo={item} />
+          <Taskitem
+            toDo={item}
+            deleteTaskFunction={this.props.deleteTaskFunction}
+          />
         ))}
       </div>
     );

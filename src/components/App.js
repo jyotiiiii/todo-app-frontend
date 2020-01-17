@@ -14,6 +14,21 @@ class App extends React.Component {
     ]
   };
 
+  // Tasks will be deleted when this function executes
+
+  deleteTask = taskId => {
+    // Firstly get the list of tasks from state
+    const currentTasks = this.state.tasks;
+    // Next, identify the task that matches the given task id and remove it
+    const updatedTasks = currentTasks.filter(
+      todoItem => todoItem.id !== taskId
+    );
+    // Update the state with the new collection of tasks (ie without the one we deleted)
+    this.setState({
+      tasks: updatedTasks
+    });
+  };
+
   render() {
     return (
       <div>
@@ -24,7 +39,10 @@ class App extends React.Component {
         {/* Pop Up Form(After add a task button is clicked) */}
         <Taskform />
         {/* Task Section  */}
-        <Tasklist listOfTasks={this.state.tasks} />
+        <Tasklist
+          listOfTasks={this.state.tasks}
+          deleteTaskFunction={this.deleteTask}
+        />
         {/* Footer  */}
         <Footer />
       </div>

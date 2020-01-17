@@ -12,7 +12,10 @@ class Taskitem extends React.Component {
               {this.props.toDo.description}
             </div>
             <div className="col-4 col-sm-3 pt-1">
-              <Deletebutton idNo={this.props.toDo.id} />
+              <Deletebutton
+                idNo={this.props.toDo.id}
+                deleteTaskFunction={this.props.deleteTaskFunction}
+              />
               <Donebutton />
             </div>
           </div>
