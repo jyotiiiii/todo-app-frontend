@@ -7,7 +7,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-light">
-        <Score />
+        <Score currentScore="89" />
         <Menubutton />
         <Hamburger />
       </nav>

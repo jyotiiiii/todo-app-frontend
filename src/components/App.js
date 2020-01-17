@@ -6,6 +6,14 @@ import Tasklist from './TaskList';
 import Footer from './Footer';
 import tasks from '../tasks';
 class App extends React.Component {
+  state = {
+    tasks: [
+      { id: 1, description: 'State task 1', completed: false },
+      { id: 2, description: 'State task 2', completed: false },
+      { id: 1, description: 'State task 3', completed: false }
+    ]
+  };
+
   render() {
     return (
       <div>
@@ -16,7 +24,7 @@ class App extends React.Component {
         {/* Pop Up Form(After add a task button is clicked) */}
         <Taskform />
         {/* Task Section  */}
-        <Tasklist />
+        <Tasklist listOfTasks={this.state.tasks} />
         {/* Footer  */}
         <Footer />
       </div>

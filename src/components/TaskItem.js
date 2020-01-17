@@ -9,7 +9,7 @@ class Taskitem extends React.Component {
         <div className="col-sm-12">
           <div className="row">
             <div className="col-8 col-sm-9 text-left">
-              {this.props.taskDescription}
+              {this.props.toDo.description}
             </div>
             <div className="col-4 col-sm-3 pt-1">
               <Deletebutton />
