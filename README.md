@@ -4,7 +4,7 @@ _A To-Do App_
 
 ### React Component Tree
 
-<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/react_components.svg" alt="React Components" width="800"/>
+<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/react_components.png" alt="React Components" width="800"/>
 ```
 kinda-app
 ├── README.md
