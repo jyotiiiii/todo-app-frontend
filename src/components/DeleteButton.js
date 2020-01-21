@@ -9,7 +9,12 @@ class Deletebutton extends React.Component {
 
   render() {
     return (
-      <a className="action-button" role="button" onClick={this.deleteClicked}>
+      <a
+        href="#"
+        className="action-button"
+        role="button"
+        onClick={this.deleteClicked}
+      >
         <i className="fas fa-trash-alt fa-lg"></i>
       </a>
     );

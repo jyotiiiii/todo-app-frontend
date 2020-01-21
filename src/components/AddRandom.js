@@ -8,10 +8,11 @@ class Addrandom extends React.Component {
   render() {
     return (
       <a
-        className="action-button"
         href="#"
+        className="action-button"
         role="button"
         onClick={this.generateRandom}
+        data-title="Click to add one of our suggestions"
       >
         <i className="far fa-heart fa-lg"></i>
       </a>

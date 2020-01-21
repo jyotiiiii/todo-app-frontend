@@ -6,13 +6,13 @@ class Taskform extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-md-4 "></div>
-          <div className="col-md-5 ">
+          <div className="col-md-4 ">
             <form className="form-inline ">
-              <div className="form-group mx-sm-3 mb-2">
+              <div className="form-group mx-sm-3 mb-2 ">
                 <input
                   type="text"
-                  className="form-control"
-                  placeholder="Enter a Kinda thing to do"
+                  className="form-control form-font"
+                  placeholder="add a Kinda thing to do"
                 ></input>
               </div>
               <button type="submit" className="btn btn-info mb-2">

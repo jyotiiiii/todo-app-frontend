@@ -38,6 +38,20 @@ class App extends React.Component {
     });
   }
 
+  // addTask(description) {
+  //   const tasks = this.state.tasks;
+  //   tasks.push({
+  //     id: tasks.length + 1,
+  //     description: description,
+  //     completed: false,
+  //     points: 5
+  //   });
+
+  //   this.setState({
+  //     tasks: tasks
+  //   });
+  // }
+
   render() {
     return (
       <div>

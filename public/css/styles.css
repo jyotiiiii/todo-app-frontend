@@ -34,6 +34,10 @@ h6 {
   border-radius: 3px;
 }
 
+.toggle:hover {
+  background-color: #ff4c68;
+}
+
 /* Score */
 .navbutton {
   /* position: relative; */
@@ -76,6 +80,51 @@ h6 {
 .hidden-form {
   visibility: hidden;
 }
+
+/* Override Bootstrap Button */
+.btn-info {
+  color: #fff;
+  background-color: #ff4c68;
+  border-color: #ff4c68;
+  font-weight: bold;
+}
+
+.form-font {
+  font-size: 15px;
+}
+
+/* ************ Tool Tips ********************** */
+
+[data-title]:hover:after {
+  opacity: 0.8;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background: linear-gradient(
+    13deg,
+    rgba(34, 193, 195, 0.4231442577030813) 0%,
+    rgba(244, 45, 253, 0.12622549019607843) 100%
+  );
+  color: #111;
+  font-size: 110%;
+  position: absolute;
+  padding: 1px 5px 2px 5px;
+  top: 120%;
+  right: -120%;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px #222222;
+  opacity: 0;
+  border: 1px solid #111111;
+  border-radius: 13px;
+  z-index: 99999;
+  visibility: hidden;
+}
+[data-title] {
+  position: relative;
+}
+
 /********************** Ids *************************/
 
 #score-dot {
@@ -83,6 +132,10 @@ h6 {
   width: 40px;
   background-color: black;
   border-radius: 50%;
+}
+
+#score-dot:hover {
+  background-color: #ff4c68;
 }
 
 #footer {
