@@ -1,6 +1,20 @@
 import React from 'react';
 
 class Taskform extends React.Component {
+  state = {
+    taskDescription: ''
+  };
+
+  addTask = () => {
+    this.props.addTaskFunction(this.state.taskDescription);
+  };
+
+  taskDescriptionNew = event => {
+    this.setState({
+      taskDescription: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="container">
@@ -13,9 +27,14 @@ class Taskform extends React.Component {
                   type="text"
                   className="form-control form-font"
                   placeholder="add a Kinda thing to do"
+                  onChange={this.taskDescriptionNew}
                 ></input>
               </div>
-              <button type="submit" className="btn btn-info mb-2">
+              <button
+                type="submit"
+                className="btn btn-info mb-2"
+                onClick={this.addTask}
+              >
                 Add Task
               </button>
             </form>

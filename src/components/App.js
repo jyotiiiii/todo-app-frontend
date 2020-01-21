@@ -38,6 +38,27 @@ class App extends React.Component {
     });
   }
 
+  addTask = taskDescription => {
+    // Firstly define the task that is being added
+    const newTask = {
+      id: this.state.tasks.length + 1,
+      description: taskDescription,
+      completed: false,
+      points: 5
+    };
+
+    // Get the current list of tasks from state
+    const currentTasks = this.state.tasks;
+
+    // Add the 'newTask' to the array of tasks in state
+    currentTasks.push(newTask);
+
+    // Update the state
+    this.setState({
+      tasks: currentTasks
+    });
+  };
+
   // addTask(description) {
   //   const tasks = this.state.tasks;
   //   tasks.push({
@@ -59,7 +80,9 @@ class App extends React.Component {
         <Navbar />
         {/* Header  */}
         <Header onClick={() => this.showForm()} />
-        {this.state.showForm ? <Taskform /> : null}
+        {this.state.showForm ? (
+          <Taskform addTaskFunction={this.addTask} />
+        ) : null}
         {/* Pop Up Form(After add a task button is clicked) */}
 
         {/* Task Section  */}
