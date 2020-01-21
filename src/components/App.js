@@ -4,13 +4,24 @@ import Header from './Header';
 import Taskform from './TaskForm';
 import Tasklist from './TaskList';
 import Footer from './Footer';
-// import tasks from '../tasks';
+import uuidv4 from 'uuid/v4';
+
 class App extends React.Component {
   state = {
     tasks: [
-      { id: 1, description: 'State task 1', completed: false, points: 5 },
-      { id: 2, description: 'State task 2', completed: false, points: 5 },
-      { id: 3, description: 'State task 3', completed: false, points: 5 }
+      {
+        id: uuidv4(),
+        description: 'State task 1',
+        completed: false,
+        points: 5
+      },
+      {
+        id: uuidv4(),
+        description: 'State task 2',
+        completed: false,
+        points: 5
+      },
+      { id: uuidv4(), description: 'State task 3', completed: false, points: 5 }
     ],
     showForm: false
   };
@@ -41,12 +52,14 @@ class App extends React.Component {
   addTask = taskDescription => {
     // Firstly define the task that is being added
     const newTask = {
-      id: this.state.tasks.length + 1,
+      id: uuidv4(),
       description: taskDescription,
       completed: false,
       points: 5
     };
-
+    console.log(
+      `New Task ID: ${newTask.id} Description: ${newTask.description}`
+    );
     // Get the current list of tasks from state
     const currentTasks = this.state.tasks;
 
