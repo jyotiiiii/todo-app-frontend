@@ -11,7 +11,8 @@ class App extends React.Component {
       { id: 1, description: 'State task 1', completed: false, points: 5 },
       { id: 2, description: 'State task 2', completed: false, points: 5 },
       { id: 3, description: 'State task 3', completed: false, points: 5 }
-    ]
+    ],
+    showForm: false
   };
 
   // Tasks will be deleted when this function executes
@@ -29,15 +30,24 @@ class App extends React.Component {
     });
   };
 
+  // This will show the Add Task form
+
+  showForm() {
+    this.setState({
+      showForm: true
+    });
+  }
+
   render() {
     return (
       <div>
         {/* Navigation Bar  */}
         <Navbar />
         {/* Header  */}
-        <Header />
+        <Header onClick={() => this.showForm()} />
+        {this.state.showForm ? <Taskform /> : null}
         {/* Pop Up Form(After add a task button is clicked) */}
-        <Taskform />
+
         {/* Task Section  */}
         <Tasklist
           listOfTasks={this.state.tasks}

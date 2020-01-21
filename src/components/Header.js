@@ -14,7 +14,7 @@ class Header extends React.Component {
 
           <div className="row">
             <div className="col">
-              <Addtask />
+              <Addtask onClick={this.props.onClick} />
               <Addrandom />
             </div>
           </div>
