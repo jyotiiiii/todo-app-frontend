@@ -82,7 +82,8 @@ class App extends React.Component {
     for (let i = 0; i < list.length; i++) {
       // and put them in a new array
       let scoresAdded = [];
-      scoresAdded = scoresAdded.push(list.points[i]);
+      let pointScore = list[i].points;
+      scoresAdded = scoresAdded.push(pointScore);
       // loop through this array and add the points together
       for (var j = 0; j < scoresAdded.length; i++) {
         sum += scoresAdded[j];
@@ -136,7 +137,7 @@ class App extends React.Component {
     return (
       <div>
         {/* Navigation Bar  */}
-        <Navbar score={this.calcScore()} />
+        <Navbar score={this.calcScore} />
         {/* Header  */}
         <Header onClick={() => this.showForm()} />
         {this.state.showForm ? (
