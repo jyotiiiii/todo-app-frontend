@@ -9,6 +9,7 @@ class Tasklist extends React.Component {
             key={item.id}
             toDo={item}
             deleteTaskFunction={this.props.deleteTaskFunction}
+            doneTaskFunction={this.props.doneTaskFunction}
           />
         ))}
       </div>

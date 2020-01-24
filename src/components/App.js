@@ -41,6 +41,28 @@ class App extends React.Component {
     });
   };
 
+  // Tasks will be marked with completed true status when this function executes
+
+  completeTask = taskId => {
+    // Firstly get the list of tasks from state
+    const currentTasks = this.state.tasks;
+    // Next, identify the task that matches the given task id
+    for (let i = 0; i < currentTasks.length; i++) {
+      const task = currentTasks[i];
+      // change the completed status of the matched task
+      if (task.id === taskId) {
+        // add a toggle to change status
+        task.completed = task.completed ? false : true;
+        // task.completed = true;
+        break;
+      }
+      // Update the state with the new collection of tasks (ie without the one we deleted)
+    }
+    this.setState({
+      tasks: currentTasks
+    });
+  };
+
   // This will show the Add Task form
 
   showForm() {
@@ -102,6 +124,7 @@ class App extends React.Component {
         <Tasklist
           listOfTasks={this.state.tasks}
           deleteTaskFunction={this.deleteTask}
+          doneTaskFunction={this.completeTask}
         />
         {/* Footer  */}
         <Footer />

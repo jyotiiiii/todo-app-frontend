@@ -151,6 +151,10 @@ h6 {
   font-size: 0.8rem;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 /* Sticky Footer */
 @media (min-width: 768px) {
   html {
