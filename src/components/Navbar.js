@@ -7,7 +7,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-light">
-        <Score currentScore="89" />
+        <Score score={this.props.score} />
         <Menubutton />
         <Hamburger />
       </nav>

@@ -5,7 +5,7 @@ class Score extends React.Component {
     return (
       <a className="navbar-brand score" href="#">
         <div id="score-dot">
-          <h6>{this.props.currentScore}</h6>
+          <h6>{this.props.score}</h6>
         </div>
       </a>
     );

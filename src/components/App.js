@@ -23,7 +23,8 @@ class App extends React.Component {
       },
       { id: uuidv4(), description: 'State task 3', completed: false, points: 5 }
     ],
-    showForm: false
+    showForm: false,
+    score: 0
   };
 
   // Tasks will be deleted when this function executes
@@ -71,6 +72,29 @@ class App extends React.Component {
     });
   }
 
+  // here I want to add the points of the tasks to display a score
+  calcScore = () => {
+    // get list of tasks from state
+    let list = this.state.tasks;
+    // initialise variable for total amount
+    let sum = 0;
+    // loop through tasks array to pull out the points values
+    for (let i = 0; i < list.length; i++) {
+      // and put them in a new array
+      let scoresAdded = [];
+      scoresAdded = scoresAdded.push(list.points[i]);
+      // loop through this array and add the points together
+      for (var j = 0; j < scoresAdded.length; i++) {
+        sum += scoresAdded[j];
+        return sum;
+      }
+    }
+    // set the state with the total points added
+    this.setState({
+      score: sum
+    });
+  };
+
   addTask = taskDescription => {
     // Firstly define the task that is being added
     const newTask = {
@@ -112,7 +136,7 @@ class App extends React.Component {
     return (
       <div>
         {/* Navigation Bar  */}
-        <Navbar />
+        <Navbar score={this.calcScore()} />
         {/* Header  */}
         <Header onClick={() => this.showForm()} />
         {this.state.showForm ? (
