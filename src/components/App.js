@@ -27,6 +27,29 @@ class App extends React.Component {
     score: 89
   };
 
+  // here I want to add the points of the tasks to display a score
+
+  calcScore = arr => {
+    // get list of tasks from state
+    let list = arr;
+    // initialise variable for total amount
+    let sum = 0;
+    // initialise empty array to collect points from each task object
+    let scoresAdded = [];
+    // loop through tasks array to pull out the points values
+    for (let i = 0; i < list.length; i++) {
+      // and put them in a scoresAdded array
+      scoresAdded.push(list[i].points);
+    }
+    console.log(scoresAdded);
+    // loop through this array and add the points together
+    for (var j = 0; j < scoresAdded.length; j++) {
+      sum += scoresAdded[j];
+    }
+    // set the state with the total points added
+    return sum;
+  };
+
   // Tasks will be deleted when this function executes
 
   deleteTask = taskId => {
@@ -113,7 +136,7 @@ class App extends React.Component {
     return (
       <div>
         {/* Navigation Bar  */}
-        <Navbar score={this.state.score} />
+        <Navbar score={this.calcScore(this.state.tasks)} />
         {/* Header  */}
         <Header onClick={() => this.showForm()} />
         {this.state.showForm ? (
