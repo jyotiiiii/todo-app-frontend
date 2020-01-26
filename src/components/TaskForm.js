@@ -21,7 +21,7 @@ class Taskform extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-md-4 "></div>
-          <div className="col-md-4 ">
+          <div className="col-md-4 col-sm-10">
             <form className="form-inline ">
               <div className="form-group mx-sm-3 mb-2 ">
                 <input

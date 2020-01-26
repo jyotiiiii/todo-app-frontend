@@ -24,7 +24,7 @@ class App extends React.Component {
       { id: uuidv4(), description: 'State task 3', completed: false, points: 5 }
     ],
     showForm: false,
-    score: 89
+    score: 0
   };
 
   // here I want to add the points of the tasks to display a score
@@ -39,7 +39,9 @@ class App extends React.Component {
     // loop through tasks array to pull out the points values
     for (let i = 0; i < list.length; i++) {
       // and put them in a scoresAdded array
-      scoresAdded.push(list[i].points);
+      if (list[i].completed === true) {
+        scoresAdded.push(list[i].points);
+      }
     }
     console.log(scoresAdded);
     // loop through this array and add the points together
