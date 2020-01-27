@@ -20,9 +20,9 @@ class Taskform extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-4 "></div>
-          <div className="col-md-4 col-sm-10">
-            <form className="form-inline ">
+          <div className="col-md-3 "></div>
+          <div className="col-md-6 col-sm-11">
+            <form className="text-center ">
               <div className="form-group mx-sm-3 mb-2 ">
                 <input
                   type="text"
@@ -40,7 +40,7 @@ class Taskform extends React.Component {
               </button>
             </form>
           </div>
-          <div className="col-md-4 "></div>
+          <div className="col-md-3 "></div>
         </div>
       </div>
     );
