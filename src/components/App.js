@@ -5,6 +5,7 @@ import Taskform from './TaskForm';
 import Tasklist from './TaskList';
 import Footer from './Footer';
 import uuidv4 from 'uuid/v4';
+import randomTasks from '../randomtasks';
 
 class App extends React.Component {
   state = {
@@ -119,19 +120,20 @@ class App extends React.Component {
     });
   };
 
-  // addTask(description) {
-  //   const tasks = this.state.tasks;
-  //   tasks.push({
-  //     id: tasks.length + 1,
-  //     description: description,
-  //     completed: false,
-  //     points: 5
-  //   });
-
-  //   this.setState({
-  //     tasks: tasks
-  //   });
-  // }
+  addRandom = () => {
+    // get list of random tasks from the randomtasks file
+    let list = randomTasks;
+    // get the list of current tasks in state
+    const currentTasks = this.state.tasks;
+    // pull out a random suggested task
+    let randomToAdd = list[Math.floor(Math.random() * list.length)];
+    // push it to the end of tasks array in state
+    currentTasks.push(randomToAdd);
+    // update state
+    this.setState({
+      tasks: currentTasks
+    });
+  };
 
   render() {
     return (
@@ -139,11 +141,14 @@ class App extends React.Component {
         {/* Navigation Bar  */}
         <Navbar score={this.calcScore} />
         {/* Header  */}
-        <Header onClick={() => this.showForm()} />
+        <Header
+          onClick={() => this.showForm()}
+          onHeartClick={() => this.addRandom()}
+        />
+        {/* Pop Up Form(After add a task button is clicked) */}
         {this.state.showForm ? (
           <Taskform addTaskFunction={this.addTask} />
         ) : null}
-        {/* Pop Up Form(After add a task button is clicked) */}
 
         {/* Task Section  */}
         <Tasklist
