@@ -93,9 +93,15 @@ class App extends React.Component {
   // This will show the Add Task form
 
   showForm() {
-    this.setState({
-      showForm: true
-    });
+    if (this.state.showForm) {
+      this.setState({
+        showForm: false
+      });
+    } else {
+      this.setState({
+        showForm: true
+      });
+    }
   }
 
   addTask = taskDescription => {
