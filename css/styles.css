@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  text-align: center;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    13deg,
+    rgba(34, 193, 195, 0.4231442577030813) 0%,
+    rgba(244, 45, 253, 0.12622549019607843) 100%
+  );
+  background-repeat: no-repeat;
+  font-family: Montserrat;
+}
+
+a:hover {
+  color: #ff4c68;
+}
+
+h6 {
+  /* Score */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-left: 1px;
+}
+
+/* Navbar Section */
+
+.toggle {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+
+.toggle:hover {
+  background-color: #ff4c68;
+}
+
+/* Score */
+.navbutton {
+  /* position: relative; */
+  margin-top: 5px;
+  border: none;
+}
+
+.jumbotron {
+  background: none;
+  padding: 0px;
+}
+
+/* Title */
+.kinda {
+  margin: auto;
+  width: 100px;
+  min-width: 100px;
+  display: block;
+}
+
+/* Heart logo */
+.me {
+  margin: auto;
+  width: 100px;
+  min-width: 100px;
+  display: block;
+  padding: 2% 0 0 0;
+}
+
+.action-button {
+  color: black;
+  padding: 0 2.5%;
+}
+
+.fa-heart {
+  font-weight: bold;
+}
+
+/* Hidden Form to Add Task */
+.hidden-form {
+  visibility: hidden;
+}
+
+/* Override Bootstrap Button */
+.btn-info {
+  color: #fff;
+  background-color: #ff4c68;
+  border-color: #ff4c68;
+  font-weight: bold;
+}
+
+.form-font {
+  font-size: 15px;
+}
+
+/* ************ Tool Tips ********************** */
+
+[data-title]:hover:after {
+  opacity: 0.8;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background: linear-gradient(
+    13deg,
+    rgba(34, 193, 195, 0.4231442577030813) 0%,
+    rgba(244, 45, 253, 0.12622549019607843) 100%
+  );
+  color: #111;
+  font-size: 110%;
+  position: absolute;
+  padding: 1px 5px 2px 5px;
+  top: 120%;
+  right: -120%;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px #222222;
+  opacity: 0;
+  border: 1px solid #111111;
+  border-radius: 13px;
+  z-index: 99999;
+  visibility: hidden;
+}
+[data-title] {
+  position: relative;
+}
+
+/********************** Ids *************************/
+
+#score-dot {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#score-dot:hover {
+  background-color: #ff4c68;
+}
+
+#footer {
+  padding: 2% 12% 2% 12%;
+  line-height: 2;
+}
+
+.spaced-icon {
+  padding: 1%;
+}
+
+.copyright {
+  font-size: 0.8rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+/* Sticky Footer */
+@media (min-width: 768px) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px; /* Margin bottom by footer height */
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Set the fixed height of the footer here */
+    line-height: 100px; /* Vertically center the text there */
+  }
+  .custom-task {
+    margin: 0 15% 0 20%;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-task {
+    margin-left: 6%;
+  }
+}
