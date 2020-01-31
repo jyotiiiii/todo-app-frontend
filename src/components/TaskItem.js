@@ -7,15 +7,13 @@ class Taskitem extends React.Component {
     let description;
     if (this.props.toDo.completed) {
       description = (
-        <div className="col-8 col-sm-9 text-left completed">
+        <div className="col-sm-9 text-left completed">
           {this.props.toDo.description}
         </div>
       );
     } else {
       description = (
-        <div className="col-8 col-sm-9 text-left">
-          {this.props.toDo.description}
-        </div>
+        <div className="col-sm-9 text-left">{this.props.toDo.description}</div>
       );
     }
 
