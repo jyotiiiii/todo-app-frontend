@@ -4,7 +4,7 @@ _A To-Do App_
 
 ### Database Schema
 
-<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/dbschema.png" alt="Database Schema" width="900"/>
+<img src="https://raw.githubusercontent.com/jyotiiiii/todo-app-frontend/master/public/images/dbschema3.png" alt="Database Schema" width="450"/>
 
 ### React Component Tree
 

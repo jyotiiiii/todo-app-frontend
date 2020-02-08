@@ -53,6 +53,18 @@ class App extends React.Component {
     return sum;
   };
 
+  // REFACTOR ABOVE CODE USING JAVASCRIPT ARRAY METHODS
+  // const calcScore = this.state.tasks.map(function(obj) {
+
+  //       return obj.points;
+  // });
+
+  // const total = calcScore.reduce(function (accumulator, currNum) {
+  //   // console.log("accumulator = " + accumulator);
+  //   // console.log("currNum = " + currNum);
+  //   return accumulator + currNum;
+  // });
+
   // Tasks will be deleted when this function executes
 
   deleteTask = taskId => {
@@ -135,6 +147,9 @@ class App extends React.Component {
     // pull out a random suggested task
     let randomToAdd = list[Math.floor(Math.random() * list.length)];
     // push it to the end of tasks array in state
+
+    //if statement to check if exists
+
     currentTasks.push(randomToAdd);
     // update state
     this.setState({
@@ -152,6 +167,7 @@ class App extends React.Component {
           onClick={() => this.showForm()}
           onHeartClick={() => this.addRandom()}
         />
+        <div id="heart"></div>
         {/* Pop Up Form(After add a task button is clicked) */}
         {this.state.showForm ? (
           <Taskform addTaskFunction={this.addTask} />
