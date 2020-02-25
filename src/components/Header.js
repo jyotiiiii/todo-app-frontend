@@ -9,7 +9,7 @@ class Header extends React.Component {
       <div className="jumbotron ">
         <div className="container text-center">
           <Brand />
-          <Logo />
+          <Logo score={this.props.score} />
           {/* Add a Task Section  */}
 
           <div className="row">

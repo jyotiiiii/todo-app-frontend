@@ -14,13 +14,13 @@ class App extends React.Component {
         id: uuidv4(),
         description: 'State task 1',
         completed: false,
-        points: 5
+        points: 10
       },
       {
         id: uuidv4(),
         description: 'State task 2',
         completed: false,
-        points: 5
+        points: 10
       },
       { id: uuidv4(), description: 'State task 3', completed: false, points: 5 }
     ],
@@ -44,7 +44,8 @@ class App extends React.Component {
         scoresAdded.push(list[i].points);
       }
     }
-    console.log(scoresAdded);
+
+    console.log({ score: scoresAdded });
     // loop through this array and add the points together
     for (var j = 0; j < scoresAdded.length; j++) {
       sum += scoresAdded[j];
@@ -144,6 +145,8 @@ class App extends React.Component {
     let list = randomTasks;
     // get the list of current tasks in state
     const currentTasks = this.state.tasks;
+    // filter out tasks from list that have not been used
+    // const filteredList = list.filter(task => task.description !== ); **** change this
     // pull out a random suggested task
     let randomToAdd = list[Math.floor(Math.random() * list.length)];
     // push it to the end of tasks array in state
@@ -166,6 +169,7 @@ class App extends React.Component {
         <Header
           onClick={() => this.showForm()}
           onHeartClick={() => this.addRandom()}
+          score={this.calcScore(this.state.tasks)}
         />
         <div id="heart"></div>
         {/* Pop Up Form(After add a task button is clicked) */}
