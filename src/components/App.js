@@ -6,35 +6,38 @@ import Tasklist from './TaskList';
 import Footer from './Footer';
 import uuidv4 from 'uuid/v4';
 import randomTasks from '../randomtasks';
+import axios from 'axios';
 
 class App extends React.Component {
   state = {
-    tasks: [
-      {
-        id: uuidv4(),
-        description: 'State task 1',
-        completed: false,
-        points: 10
-      },
-      {
-        id: uuidv4(),
-        description: 'State task 2',
-        completed: false,
-        points: 10
-      },
-      { id: uuidv4(), description: 'State task 3', completed: false, points: 5 }
-    ],
+    tasks: [],
     showForm: false,
-    score: 0
+    score: 20
   };
 
+  componentDidMount = () => {
+    // Fetch tasks from API
+    axios
+      .get('https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+      .then(response => {
+        // handle success
+        this.setState({
+          tasks: response.data.tasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
+  };
   // here I want to add the points of the tasks to display a score
 
   calcScore = arr => {
     // get list of tasks from state
     let list = arr;
+    console.log({ listLine38: list });
     // initialise variable for total amount
-    let sum = 0;
+    let sum = this.state.score;
     // initialise empty array to collect points from each task object
     let scoresAdded = [];
     // loop through tasks array to pull out the points values
@@ -121,8 +124,10 @@ class App extends React.Component {
     // Firstly define the task that is being added
     const newTask = {
       id: uuidv4(),
+      user_id: '5cd7209f-b05b-456a-9327-55e8af3f945e',
+      random: 0,
       description: taskDescription,
-      completed: false,
+      completed: 0,
       points: 5
     };
     console.log(
