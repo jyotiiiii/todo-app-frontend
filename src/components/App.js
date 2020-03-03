@@ -75,7 +75,6 @@ class App extends React.Component {
   deleteTask = taskId => {
     // Firstly get the list of tasks from state
     const currentTasks = this.state.tasks;
-    // Next, identify the task that matches the given task id and remove it
 
     axios
       .delete(
@@ -83,6 +82,7 @@ class App extends React.Component {
       )
       .then(response => {
         // handle success
+        // Next, identify the task that matches the given task id and remove it
         const updatedTasks = currentTasks.filter(
           todoItem => todoItem.id !== taskId
         );
@@ -104,20 +104,32 @@ class App extends React.Component {
     // Firstly get the list of tasks from state
     const currentTasks = this.state.tasks;
     // Next, identify the task that matches the given task id
-    for (let i = 0; i < currentTasks.length; i++) {
-      const task = currentTasks[i];
-      // change the completed status of the matched task
-      if (task.id === taskId) {
-        // add a toggle to change status
-        task.completed = task.completed ? false : true;
-        // task.completed = true;
-        break;
-      }
-      // Update the state with the new collection of tasks (ie without the one we deleted)
-    }
-    this.setState({
-      tasks: currentTasks
-    });
+
+    axios
+      .put(
+        `https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`
+      )
+      .then(response => {
+        // handle success
+        for (let i = 0; i < currentTasks.length; i++) {
+          const task = currentTasks[i];
+          // change the completed status of the matched task
+          if (task.id === taskId) {
+            // add a toggle to change status
+            task.completed = task.completed ? false : true;
+            // task.completed = true if false, false if true;
+            break;
+          }
+          // Update the state with the new completed status
+        }
+        this.setState({
+          tasks: currentTasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
   };
 
   // This will show the Add Task form
