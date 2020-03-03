@@ -76,13 +76,26 @@ class App extends React.Component {
     // Firstly get the list of tasks from state
     const currentTasks = this.state.tasks;
     // Next, identify the task that matches the given task id and remove it
-    const updatedTasks = currentTasks.filter(
-      todoItem => todoItem.id !== taskId
-    );
+
+    axios
+      .delete(
+        `https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`
+      )
+      .then(response => {
+        // handle success
+        const updatedTasks = currentTasks.filter(
+          todoItem => todoItem.id !== taskId
+        );
+        this.setState({
+          tasks: updatedTasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
+
     // Update the state with the new collection of tasks (ie without the one we deleted)
-    this.setState({
-      tasks: updatedTasks
-    });
   };
 
   // Tasks will be marked with completed true status when this function executes
