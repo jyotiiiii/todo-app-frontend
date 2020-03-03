@@ -190,8 +190,6 @@ class App extends React.Component {
   addRandom = () => {
     // get list of random tasks from the randomtasks file
     let list = randomTasks;
-    // get the list of current tasks in state
-    const currentTasks = this.state.tasks;
     // filter out tasks from list that have not been used
     // const filteredList = list.filter(task => task.description !== ); **** change this
     // pull out a random suggested task
@@ -199,12 +197,27 @@ class App extends React.Component {
     // push it to the end of tasks array in state
 
     //if statement to check if exists
+    axios
+      .post(
+        'https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks',
+        randomToAdd
+      )
+      .then(response => {
+        // handle success
+        // get the list of current tasks in state
+        const currentTasks = this.state.tasks;
 
-    currentTasks.push(randomToAdd);
-    // update state
-    this.setState({
-      tasks: currentTasks
-    });
+        currentTasks.push(randomToAdd);
+        console.log({ randomToAdd: randomToAdd });
+        // update state
+        this.setState({
+          tasks: currentTasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
   };
 
   render() {
