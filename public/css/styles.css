@@ -1,25 +1,25 @@
 body {
   margin: 0;
   text-align: center;
-  background: rgb(34, 193, 195);
+  /* background: rgb(34, 193, 195); */
   background: linear-gradient(
-    13deg,
-    rgba(34, 193, 195, 0.4231442577030813) 0%,
-    rgba(244, 45, 253, 0.12622549019607843) 100%
+    23deg,
+    #20eef54d 0%,
+    rgba(243, 45, 253, 0.171) 100%
   );
   background-repeat: no-repeat;
   font-family: Montserrat;
 }
 
 a:hover {
-  color: #ff4c68;
+  color: #fc4d9f;
 }
 
 h6 {
   /* Score */
-  color: white;
+  color: lavender;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   padding-top: 5px;
   padding-left: 1px;
@@ -86,8 +86,8 @@ h6 {
 /* Override Bootstrap Button */
 .btn-info {
   color: #fff;
-  background-color: #ff4c68;
-  border-color: #ff4c68;
+  background-color: #f73485;
+  border-color: #f73485;
   font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ h6 {
 }
 
 #score-dot:hover {
-  background-color: #ff4c68;
+  background-color: #f73485;
 }
 
 #footer {

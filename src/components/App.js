@@ -30,6 +30,7 @@ class App extends React.Component {
         console.error(error);
       });
   };
+
   // here I want to add the points of the tasks to display a score
 
   calcScore = arr => {
@@ -128,21 +129,37 @@ class App extends React.Component {
       random: 0,
       description: taskDescription,
       completed: 0,
-      points: 5
+      points: 10
     };
     console.log(
       `New Task ID: ${newTask.id} Description: ${newTask.description}`
     );
-    // Get the current list of tasks from state
-    const currentTasks = this.state.tasks;
 
-    // Add the 'newTask' to the array of tasks in state
-    currentTasks.push(newTask);
+    axios
+      .post(
+        'https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks',
+        newTask
+      )
+      .then(response => {
+        // handle success
+        //this is if task id is coming from the backend
+        // newTask.id = response.data.task.id;
+        console.log({ newTask: newTask });
+        // Get the current list of tasks from state
+        const currentTasks = this.state.tasks;
 
-    // Update the state
-    this.setState({
-      tasks: currentTasks
-    });
+        // Add the 'newTask' to the array of tasks in state
+        currentTasks.push(newTask);
+
+        // Update the state
+        this.setState({
+          tasks: currentTasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
   };
 
   addRandom = () => {
