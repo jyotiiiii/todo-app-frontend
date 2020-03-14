@@ -10,8 +10,8 @@ class Logo extends React.Component {
           <linearGradient id="half" gradientTransform="rotate(90)">
             <stop offset="0%" stopColor="transparent" />
             <stop offset={calcOffset + '%'} stopColor="transparent" />
-            <stop offset={calcOffset + '%'} stopColor="#fc4d9f" />
-            <stop offset="100%" stopColor="#fc4d9f" />
+            <stop offset={calcOffset + '%'} stopColor="#FB48C4" />
+            <stop offset="100%" stopColor="#FB48C4" />
           </linearGradient>
         </defs>
         <path

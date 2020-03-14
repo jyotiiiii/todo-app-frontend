@@ -12,7 +12,7 @@ class App extends React.Component {
   state = {
     tasks: [],
     showForm: false,
-    score: 20
+    score: 0
   };
 
   componentDidMount = () => {
@@ -118,7 +118,7 @@ class App extends React.Component {
             // add a toggle to change status
             task.completed = task.completed ? false : true;
             // task.completed = true if false, false if true;
-            break;
+            // break;
           }
           // Update the state with the new completed status
         }
@@ -135,15 +135,18 @@ class App extends React.Component {
   // This will show the Add Task form
 
   showForm() {
-    if (this.state.showForm) {
-      this.setState({
-        showForm: false
-      });
-    } else {
-      this.setState({
-        showForm: true
-      });
-    }
+    this.setState(prevState => ({ showForm: !prevState.showForm }));
+
+    // is the same as:
+    //   if (this.state.showForm) {
+    //     this.setState({
+    //       showForm: false
+    //     });
+    //   } else {
+    //     this.setState({
+    //       showForm: true
+    //     });
+    //   }
   }
 
   addTask = taskDescription => {

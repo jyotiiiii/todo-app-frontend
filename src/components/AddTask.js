@@ -3,7 +3,7 @@ import React from 'react';
 class Addtask extends React.Component {
   render() {
     return (
-      <a
+      <span
         className="action-button"
         href="#"
         data-title="Click to add your own task"
@@ -11,7 +11,7 @@ class Addtask extends React.Component {
         onClick={this.props.onClick}
       >
         <i className="fas fa-plus fa-lg"></i>
-      </a>
+      </span>
     );
   }
 }
