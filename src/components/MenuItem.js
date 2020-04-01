@@ -4,10 +4,10 @@ class Menuitem extends React.Component {
   render() {
     return (
       <li className="nav-item ml-auto">
-        <a className="nav-link" href="#">
+        <span className="nav-link" >
           {this.props.menuDescription}{' '}
           <span className="sr-only">(current)</span>
-        </a>
+        </span>
       </li>
     );
   }

@@ -3,11 +3,11 @@ import React from 'react';
 class Score extends React.Component {
   render() {
     return (
-      <a className="navbar-brand score" href="#">
+      <span className="navbar-brand score">
         <div id="score-dot">
           <h6>{this.props.score}</h6>
         </div>
-      </a>
+      </span>
     );
   }
 }

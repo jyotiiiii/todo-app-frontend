@@ -12,16 +12,10 @@ class Menubutton extends React.Component {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <div className="">
-          <div className="toggle">
-            <a className="" href="#"></a>
-          </div>
-          <div className="toggle">
-            <a className="" href="#"></a>
-          </div>
-          <div className="toggle">
-            <a className="" href="#"></a>
-          </div>
+        <div>
+          <div className="toggle"></div>
+          <div className="toggle"></div>
+          <div className="toggle"></div>
         </div>
       </button>
     );
