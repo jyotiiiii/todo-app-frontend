@@ -7,14 +7,9 @@ class Donebutton extends React.Component {
 
   render() {
     return (
-      <a
-        href="#"
-        className="action-button"
-        role="button"
-        onClick={this.doneClicked}
-      >
+      <button className="action-button" onClick={this.doneClicked}>
         <i className="fas fa-check fa-lg"></i>
-      </a>
+      </button>
     );
   }
 }

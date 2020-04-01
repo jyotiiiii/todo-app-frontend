@@ -72,6 +72,12 @@ h6 {
 .action-button {
   color: black;
   padding: 0 2.5%;
+  border: none;
+  background: none;
+}
+
+.action-button:hover {
+  color: #ff4c68;
 }
 
 .fa-heart {
@@ -174,7 +180,7 @@ h6 {
 }
 
 .copyright {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 .completed {
