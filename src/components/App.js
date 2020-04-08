@@ -36,7 +36,7 @@ class App extends React.Component {
   calcScore = arr => {
     // get list of tasks from state
     let list = arr;
-    console.log({ listLine38: list });
+    // console.log({ listLine38: list });
     // initialise variable for total amount
     let sum = this.state.score;
     // initialise empty array to collect points from each task object
@@ -49,7 +49,7 @@ class App extends React.Component {
       }
     }
 
-    console.log({ score: scoresAdded });
+    // console.log({ score: scoresAdded });
     // loop through this array and add the points together
     for (var j = 0; j < scoresAdded.length; j++) {
       sum += scoresAdded[j];
@@ -57,18 +57,6 @@ class App extends React.Component {
     // set the state with the total points added
     return sum;
   };
-
-  // REFACTOR ABOVE CODE USING JAVASCRIPT ARRAY METHODS
-  // const calcScore = this.state.tasks.map(function(obj) {
-
-  //       return obj.points;
-  // });
-
-  // const total = calcScore.reduce(function (accumulator, currNum) {
-  //   // console.log("accumulator = " + accumulator);
-  //   // console.log("currNum = " + currNum);
-  //   return accumulator + currNum;
-  // });
 
   // Tasks will be deleted when this function executes
 

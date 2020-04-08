@@ -2,7 +2,7 @@ import React from 'react';
 
 class Logo extends React.Component {
   render() {
-    console.log({ score: this.props.score });
+    // console.log({ score: this.props.score });
     let calcOffset = 100 - this.props.score;
     return (
       <svg height="80" width="100" viewBox="0 0 24 24">
