@@ -2,17 +2,27 @@ import React from 'react';
 
 class Taskform extends React.Component {
   state = {
-    taskDescription: ''
+    taskDescription: '',
+    taskCategory: '',
   };
 
-  addTask = event => {
+  addTask = (event) => {
     event.preventDefault();
-    this.props.addTaskFunction(this.state.taskDescription);
+    this.props.addTaskFunction(
+      this.state.taskDescription,
+      this.state.taskCategory
+    );
   };
 
-  taskDescriptionNew = event => {
+  taskDescriptionNew = (event) => {
     this.setState({
-      taskDescription: event.target.value
+      taskDescription: event.target.value,
+    });
+  };
+
+  taskCategorySet = (event) => {
+    this.setState({
+      taskCategory: event.target.value,
     });
   };
 
@@ -30,6 +40,17 @@ class Taskform extends React.Component {
                   placeholder="add a Kinda thing to do"
                   onChange={this.taskDescriptionNew}
                 ></input>
+
+                <select
+                  name="category"
+                  onChange={this.taskCategorySet}
+                  required
+                >
+                  <option value="">Please choose a category</option>
+                  <option value="self">Self</option>
+                  <option value="others">Others</option>
+                  <option value="world">World</option>
+                </select>
               </div>
               <button
                 type="submit"

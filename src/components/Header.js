@@ -9,9 +9,10 @@ class Header extends React.Component {
       <div className="jumbotron ">
         <div className="container text-center">
           <Brand />
-          <Logo score={this.props.score} />
+          {[20, 40, 60].map((score) => (
+            <Logo score={score} />
+          ))}
           {/* Add a Task Section  */}
-
           <div className="row">
             <div className="col">
               <Addtask onClick={this.props.onClick} />

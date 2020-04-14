@@ -4,19 +4,19 @@ import Donebutton from './DoneButton';
 
 class Taskitem extends React.Component {
   render() {
-    let description;
-    if (this.props.toDo.completed) {
-      description = (
-        <div className="col-sm-9 text-left completed">
-          {this.props.toDo.description}
-        </div>
-      );
-    } else {
-      description = (
-        <div className="col-sm-9 text-left">{this.props.toDo.description}</div>
-      );
-    }
+    const description = (
+      <div
+        className={
+          this.props.toDo.completed
+            ? 'col-sm-9 text-left completed'
+            : 'col-sm-9 text-left'
+        }
+      >
+        {`${this.props.toDo.description} (${this.props.toDo.category})`}
+      </div>
+    );
 
+    console.log(this.props.toDo);
     return (
       <div className="row justify-content-center pb-3 custom-task">
         <div className="col-sm-12">
