@@ -12,23 +12,23 @@ class App extends React.Component {
   state = {
     tasks: [],
     showForm: false,
-    score: 0
+    score: 0,
   };
 
   componentDidMount = () => {
     // Fetch tasks from API
     axios
       .get('https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks')
-      .then(response => {
+      .then((response) => {
         // handle success
         console.log(response.data.tasks);
         console.log(this.calcScore(response.data.tasks));
         this.setState({
           tasks: response.data.tasks,
-          score: this.calcScore(response.data.tasks)
+          score: this.calcScore(response.data.tasks),
         });
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error
         console.error(error);
       });
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   // here I want to add the points of the tasks to display a score
 
-  calcScore = arr => {
+  calcScore = (arr) => {
     // get list of tasks from state
     let list = arr;
     // console.log({ listLine38: list });
@@ -63,7 +63,7 @@ class App extends React.Component {
 
   // Tasks will be deleted when this function executes
 
-  deleteTask = taskId => {
+  deleteTask = (taskId) => {
     // Firstly get the list of tasks from state
     const currentTasks = this.state.tasks;
 
@@ -71,17 +71,17 @@ class App extends React.Component {
       .delete(
         `https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`
       )
-      .then(response => {
+      .then((response) => {
         // handle success
         // Next, identify the task that matches the given task id and remove it
         const updatedTasks = currentTasks.filter(
-          todoItem => todoItem.id !== taskId
+          (todoItem) => todoItem.id !== taskId
         );
         this.setState({
-          tasks: updatedTasks
+          tasks: updatedTasks,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error
         console.error(error);
       });
@@ -91,7 +91,7 @@ class App extends React.Component {
 
   // Tasks will be marked with completed true status when this function executes
 
-  completeTask = taskId => {
+  completeTask = (taskId) => {
     // Firstly get the list of tasks from state
     const currentTasks = this.state.tasks;
     // Next, identify the task that matches the given task id
@@ -112,17 +112,18 @@ class App extends React.Component {
       .put(
         `https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`,
         {
-          taskCompleted: currentTasks.find(task => task.id === taskId).completed
+          taskCompleted: currentTasks.find((task) => task.id === taskId)
+            .completed,
         }
       )
-      .then(response => {
+      .then((response) => {
         // handle success
         this.setState({
-          tasks: currentTasks
+          tasks: currentTasks,
         });
         console.log(response);
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error to alert user
         console.error(error);
       });
@@ -131,7 +132,7 @@ class App extends React.Component {
   // This will show the Add Task form
 
   showForm() {
-    this.setState(prevState => ({ showForm: !prevState.showForm }));
+    this.setState((prevState) => ({ showForm: !prevState.showForm }));
 
     // is the same as:
     //   if (this.state.showForm) {
@@ -145,7 +146,7 @@ class App extends React.Component {
     //   }
   }
 
-  addTask = taskDescription => {
+  addTask = (taskDescription, taskCategory) => {
     // Firstly define the task that is being added
     const newTask = {
       id: uuidv4(),
@@ -153,7 +154,8 @@ class App extends React.Component {
       random: 0,
       description: taskDescription,
       completed: 0,
-      points: 10
+      points: 10,
+      category: taskCategory,
     };
     console.log(
       `New Task ID: ${newTask.id} Description: ${newTask.description}`
@@ -164,7 +166,7 @@ class App extends React.Component {
         'https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks',
         newTask
       )
-      .then(response => {
+      .then((response) => {
         // handle success
         //this is if task id is coming from the backend
         // newTask.id = response.data.task.id;
@@ -177,10 +179,10 @@ class App extends React.Component {
 
         // Update the state
         this.setState({
-          tasks: currentTasks
+          tasks: currentTasks,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error
         console.error(error);
       });
@@ -191,11 +193,11 @@ class App extends React.Component {
     let list = randomTasks;
     // console.table(randomTasks);
     // filter out tasks from list that have not been used
-    const currentTasks = this.state.tasks.map(task => task.description);
+    const currentTasks = this.state.tasks.map((task) => task.description);
 
     // console.table(currentTasks);
     const filteredList = list.filter(
-      task => !currentTasks.includes(task.description)
+      (task) => !currentTasks.includes(task.description)
     );
     // pull out a random suggested task
 
@@ -215,7 +217,7 @@ class App extends React.Component {
         'https://l9usbtfbs5.execute-api.eu-west-2.amazonaws.com/dev/tasks',
         randomToAdd
       )
-      .then(response => {
+      .then((response) => {
         // handle success
         // get the list of current tasks in state
         const currentTasks = this.state.tasks;
@@ -224,10 +226,10 @@ class App extends React.Component {
         console.log({ randomToAdd: randomToAdd });
         // update state
         this.setState({
-          tasks: currentTasks
+          tasks: currentTasks,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error
         console.error(error);
       });
@@ -242,7 +244,7 @@ class App extends React.Component {
         <Header
           onClick={() => this.showForm()}
           onHeartClick={() => this.addRandom()}
-          score={this.calcScore(this.state.tasks)}
+          listOfScores={[this.calcScore(this.state.tasks), 50]}
         />
         <div id="heart"></div>
         {/* Pop Up Form(After add a task button is clicked) */}
