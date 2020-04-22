@@ -10,7 +10,7 @@ class Taskform extends React.Component {
     event.preventDefault();
     this.props.addTaskFunction(
       this.state.taskDescription,
-      this.state.taskCategory
+      this.props.taskCategory
     );
   };
 
@@ -41,7 +41,7 @@ class Taskform extends React.Component {
                   onChange={this.taskDescriptionNew}
                 ></input>
 
-                <select
+                {/* <select
                   name="category"
                   onChange={this.taskCategorySet}
                   required
@@ -50,7 +50,7 @@ class Taskform extends React.Component {
                   <option value="self">Self</option>
                   <option value="others">Others</option>
                   <option value="world">World</option>
-                </select>
+                </select> */}
               </div>
               <button
                 type="submit"

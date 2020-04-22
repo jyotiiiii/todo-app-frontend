@@ -12,6 +12,7 @@ class App extends React.Component {
   state = {
     tasks: [],
     showForm: false,
+    currentCategory: null,
     score: 0,
   };
 
@@ -131,8 +132,11 @@ class App extends React.Component {
 
   // This will show the Add Task form
 
-  showForm() {
-    this.setState((prevState) => ({ showForm: !prevState.showForm }));
+  showForm(category) {
+    this.setState((prevState) => ({
+      showForm: !prevState.showForm,
+      currentCategory: category,
+    }));
 
     // is the same as:
     //   if (this.state.showForm) {
@@ -242,14 +246,19 @@ class App extends React.Component {
         <Navbar score={this.calcScore(this.state.tasks)} />
         {/* Header  */}
         <Header
-          onClick={() => this.showForm()}
+          onAddTaskClick={(category) => {
+            this.showForm(category);
+          }}
           onHeartClick={() => this.addRandom()}
-          listOfScores={[this.calcScore(this.state.tasks), 50]}
+          score={this.calcScore(this.state.tasks)}
         />
         <div id="heart"></div>
         {/* Pop Up Form(After add a task button is clicked) */}
         {this.state.showForm ? (
-          <Taskform addTaskFunction={this.addTask} />
+          <Taskform
+            addTaskFunction={this.addTask}
+            taskCategory={this.state.currentCategory}
+          />
         ) : null}
 
         {/* Task Section  */}

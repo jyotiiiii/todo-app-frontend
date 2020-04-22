@@ -8,7 +8,7 @@ class Addtask extends React.Component {
         href="#"
         data-title="Click to add your own task"
         role="button"
-        onClick={this.props.onClick}
+        onClick={() => this.props.onAddTaskClick(this.props.taskCategory)}
       >
         <i className="fas fa-plus fa-lg"></i>
       </span>

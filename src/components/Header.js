@@ -9,13 +9,16 @@ class Header extends React.Component {
       <div className="jumbotron ">
         <div className="container text-center">
           <Brand />
-          {[20, 40, 60].map((score) => (
-            <Logo score={score} />
-          ))}
+          <img src="./images/others.png" width="100px"></img>
+          <Logo score={this.props.score} />
+          <img src="./images/others.png" width="100px"></img>
           {/* Add a Task Section  */}
           <div className="row">
             <div className="col">
-              <Addtask onClick={this.props.onClick} />
+              <Addtask
+                onAddTaskClick={this.props.onAddTaskClick}
+                taskCategory="Self"
+              />
               <Addrandom onHeartClick={this.props.onHeartClick} />
             </div>
           </div>
