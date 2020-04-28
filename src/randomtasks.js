@@ -7,7 +7,8 @@ const randomTasks = [
     random: 1,
     description: 'Sleep in',
     completed: 0,
-    points: 5
+    points: 10,
+    category: 'self',
   },
   {
     id: uuidv4(),
@@ -15,7 +16,8 @@ const randomTasks = [
     random: 1,
     description: 'Go for a swim in the sea',
     completed: 0,
-    points: 10
+    points: 10,
+    category: 'self',
   },
   {
     id: uuidv4(),
@@ -23,7 +25,8 @@ const randomTasks = [
     random: 1,
     description: 'Get a massage',
     completed: 0,
-    points: 10
+    points: 10,
+    category: 'self',
   },
   {
     id: uuidv4(),
@@ -31,7 +34,8 @@ const randomTasks = [
     random: 1,
     description: 'Visit a new exhibition',
     completed: 0,
-    points: 10
+    points: 10,
+    category: 'self',
   },
   {
     id: uuidv4(),
@@ -39,7 +43,8 @@ const randomTasks = [
     random: 1,
     description: 'Plan a holiday',
     completed: 0,
-    points: 10
+    points: 10,
+    category: 'self',
   },
   {
     id: uuidv4(),
@@ -47,8 +52,9 @@ const randomTasks = [
     random: 1,
     description: 'Practice Mindfulness',
     completed: 0,
-    points: 10
-  }
+    points: 10,
+    category: 'self',
+  },
 ];
 
 export default randomTasks;

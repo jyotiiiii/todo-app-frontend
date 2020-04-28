@@ -9,9 +9,14 @@ class Header extends React.Component {
       <div className="jumbotron ">
         <div className="container text-center">
           <Brand />
-          <img src="./images/others.png" width="100px"></img>
+          {this.props.score >= 50 ? (
+            <img src="./images/others.png" width="100px"></img>
+          ) : null}
+
           <Logo score={this.props.score} />
-          <img src="./images/others.png" width="100px"></img>
+          {this.props.score >= 100 ? (
+            <img src="./images/others.png" width="100px"></img>
+          ) : null}
           {/* Add a Task Section  */}
           <div className="row">
             <div className="col">
