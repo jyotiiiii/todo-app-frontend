@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Donebutton extends React.Component {
   doneClicked = () => {
@@ -13,5 +14,9 @@ class Donebutton extends React.Component {
     );
   }
 }
+
+Donebutton.propTypes = {
+  doneTaskFunction: PropTypes.func.isRequired,
+};
 
 export default Donebutton;
