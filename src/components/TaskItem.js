@@ -35,7 +35,7 @@ class Taskitem extends React.Component {
 }
 
 Taskitem.propTypes = {
-  toDo: PropTypes.shapeOf({
+  toDo: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
