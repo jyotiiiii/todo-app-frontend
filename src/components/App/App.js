@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
-import Brand from './Brand/Brand';
 import Header from './Header/Header';
 import TaskForm from './TaskForm/TaskForm';
 import TaskList from './TaskList/TaskList';
@@ -247,8 +246,6 @@ class App extends React.Component {
         <Navbar score={this.calcScore(this.state.tasks)} />
 
         {/* Header  */}
-        <Brand />
-
         <Header
           onAddTaskClick={(category) => {
             this.showForm(category);

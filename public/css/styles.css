@@ -60,6 +60,11 @@ h6 {
   padding-bottom: 2%;
 }
 
+/* Category Logos */
+
+.categories {
+  width: 40%;
+}
 /* Heart logo */
 .me {
   margin: auto;
