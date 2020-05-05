@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Menusearch extends React.Component {
+class MenuSearch extends React.Component {
   render() {
     return (
       <li className="nav-item ml-auto">
@@ -17,4 +17,4 @@ class Menusearch extends React.Component {
   }
 }
 
-export default Menusearch;
+export default MenuSearch;

@@ -1,7 +1,7 @@
 import React from 'react';
-import Score from './Score';
-import Menubutton from './MenuButton';
-import Hamburger from './Hamburger';
+import Score from './Score/Score';
+import Menubutton from './MenuButton/MenuButton';
+import Hamburger from './Hamburger/Hamburger';
 
 class Navbar extends React.Component {
   render() {

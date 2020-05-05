@@ -1,11 +1,11 @@
 import React from 'react';
-import Socialicon from './SocialIcon';
-import Copyright from './Copyright';
+import SocialIcon from './SocialIcon/SocialIcon';
+import Copyright from './Copyright/Copyright';
 class Footer extends React.Component {
   render() {
     return (
       <footer className="footer" id="footer">
-        <Socialicon />
+        <SocialIcon />
         <Copyright />
       </footer>
     );

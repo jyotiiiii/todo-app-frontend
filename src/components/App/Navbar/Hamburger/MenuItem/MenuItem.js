@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Menuitem extends React.Component {
+class MenuItem extends React.Component {
   render() {
     return (
       <li className="nav-item ml-auto">
@@ -13,4 +13,4 @@ class Menuitem extends React.Component {
   }
 }
 
-export default Menuitem;
+export default MenuItem;

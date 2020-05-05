@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Taskform extends React.Component {
+class TaskForm extends React.Component {
   state = {
     taskDescription: '',
     taskCategory: '',
@@ -68,4 +68,4 @@ class Taskform extends React.Component {
   }
 }
 
-export default Taskform;
+export default TaskForm;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Addtask extends React.Component {
+class AddTask extends React.Component {
   render() {
     return (
       <span
@@ -16,4 +16,4 @@ class Addtask extends React.Component {
   }
 }
 
-export default Addtask;
+export default AddTask;

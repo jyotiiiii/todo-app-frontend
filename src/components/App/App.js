@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Header from './Header';
-import Taskform from './TaskForm';
-import Tasklist from './TaskList';
-import Footer from './Footer';
+import Navbar from './Navbar/Navbar';
+import Brand from './Brand/Brand';
+import Header from './Header/Header';
+import TaskForm from './TaskForm/TaskForm';
+import TaskList from './TaskList/TaskList';
+import Footer from './Footer/Footer';
 import uuidv4 from 'uuid/v4';
-import randomTasks from '../randomtasks';
+import randomTasks from '../../randomtasks';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -244,7 +245,10 @@ class App extends React.Component {
       <div>
         {/* Navigation Bar  */}
         <Navbar score={this.calcScore(this.state.tasks)} />
+
         {/* Header  */}
+        <Brand />
+
         <Header
           onAddTaskClick={(category) => {
             this.showForm(category);
@@ -252,17 +256,18 @@ class App extends React.Component {
           onHeartClick={() => this.addRandom()}
           score={this.calcScore(this.state.tasks)}
         />
+
         <div id="heart"></div>
         {/* Pop Up Form(After add a task button is clicked) */}
         {this.state.showForm ? (
-          <Taskform
+          <TaskForm
             addTaskFunction={this.addTask}
             taskCategory={this.state.currentCategory}
           />
         ) : null}
 
         {/* Task Section  */}
-        <Tasklist
+        <TaskList
           listOfTasks={this.state.tasks}
           deleteTaskFunction={this.deleteTask}
           doneTaskFunction={this.completeTask}

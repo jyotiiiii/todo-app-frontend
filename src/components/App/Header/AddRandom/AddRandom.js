@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Addrandom extends React.Component {
+class AddRandom extends React.Component {
   render() {
     return (
       <button
@@ -14,4 +14,4 @@ class Addrandom extends React.Component {
   }
 }
 
-export default Addrandom;
+export default AddRandom;

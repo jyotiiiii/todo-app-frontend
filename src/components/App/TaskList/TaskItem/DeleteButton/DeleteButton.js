@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Deletebutton extends React.Component {
+class DeleteButton extends React.Component {
   deleteClicked = () => {
     this.props.deleteTaskFunction(this.props.idNo);
   };
@@ -16,4 +16,4 @@ class Deletebutton extends React.Component {
   }
 }
 
-export default Deletebutton;
+export default DeleteButton;

@@ -1,11 +1,12 @@
 import React from 'react';
-import Taskitem from './TaskItem';
-class Tasklist extends React.Component {
+import TaskItem from './TaskItem/TaskItem';
+
+class TaskList extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        {this.props.listOfTasks.map(item => (
-          <Taskitem
+        {this.props.listOfTasks.map((item) => (
+          <TaskItem
             key={item.id}
             toDo={item}
             deleteTaskFunction={this.props.deleteTaskFunction}
@@ -17,4 +18,4 @@ class Tasklist extends React.Component {
   }
 }
 
-export default Tasklist;
+export default TaskList;

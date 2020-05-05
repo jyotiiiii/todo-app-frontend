@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Socialicon extends React.Component {
+class SocialIcon extends React.Component {
   render() {
     return (
       <div>
@@ -13,4 +13,4 @@ class Socialicon extends React.Component {
   }
 }
 
-export default Socialicon;
+export default SocialIcon;

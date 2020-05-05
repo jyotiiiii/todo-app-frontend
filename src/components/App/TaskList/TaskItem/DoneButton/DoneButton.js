@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Donebutton extends React.Component {
+class DoneButton extends React.Component {
   doneClicked = () => {
     this.props.doneTaskFunction(this.props.idNo);
   };
@@ -15,8 +15,8 @@ class Donebutton extends React.Component {
   }
 }
 
-Donebutton.propTypes = {
+DoneButton.propTypes = {
   doneTaskFunction: PropTypes.func.isRequired,
 };
 
-export default Donebutton;
+export default DoneButton;
