@@ -241,7 +241,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         {/* Navigation Bar  */}
         <Navbar score={this.calcScore(this.state.tasks)} />
 
@@ -271,7 +271,7 @@ class App extends React.Component {
         />
         {/* Footer  */}
         <Footer />
-      </div>
+      </>
     );
   }
 }

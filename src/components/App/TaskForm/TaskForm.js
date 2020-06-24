@@ -7,7 +7,7 @@ class TaskForm extends React.Component {
   };
 
   addTask = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     this.props.addTaskFunction(
       this.state.taskDescription,
       this.props.taskCategory

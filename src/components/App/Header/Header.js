@@ -25,7 +25,7 @@ class Header extends React.Component {
             {/* TODO Change image and props */}
             <div className="col">
               {this.props.score >= 100 ? (
-                <img src="./images/others.png" width="100px"></img>
+                <img src="./images/world.webp" width="100px"></img>
               ) : null}
             </div>
           </div>

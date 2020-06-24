@@ -13,7 +13,7 @@ class TaskItem extends React.Component {
           completed ? 'col-sm-9 text-left completed' : 'col-sm-9 text-left'
         }
       >
-        {`${description} (${category})`}
+        {description} ({category})
       </div>
     );
 
